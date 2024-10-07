@@ -3,9 +3,11 @@ import { useState } from "react";
 
 export default function DetalhesCandidato(props) {
     const [questao, setQuestao] = useState("");
+    const [questionamentos, setQuestionamentos] = useState(props.candidatoSelecionado.questionamentos)
 
     function inserirDuvida(){
-        props.candidatoSelecionado.questionamentos.push(questao);
+        setQuestionamentos([...questionamentos, questao]);
+        props.candidatoSelecionado.questionamentos=questionamentos;
     }
     return (
         <Container>
@@ -35,7 +37,7 @@ export default function DetalhesCandidato(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.candidatoSelecionado.questionamentos.map((questao) => {
+                    {questionamentos.map((questao) => {
                         return <tr><td>{questao}</td></tr>
                     })}
                 </tbody>
