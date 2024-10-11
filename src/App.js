@@ -11,7 +11,7 @@ function App() {
         //depois
         //http://localhost:3000/projetoeleicoes2024
       }
-        <BrowserRouter basename="/projetoeleicoes2024">
+        <BrowserRouter basename="/CorrecaoProvaBCC1B">
             <Routes>
                 <Route path="/" element={<TelaPrincipal />} />
             </Routes>
